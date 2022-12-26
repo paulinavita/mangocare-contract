@@ -83,19 +83,6 @@ contract MangoCare {
     }
 
     /*
-      Check eligibility for registering to the insurance program
-    */
-    // modifier eligible(address _addr, uint256 _sn) {
-    //     bool isExist = isSerialNoDuplicate(_sn);
-    //     require(isExist, "Product is already insured with a customer");
-    //     // require(
-    //     //     !listInsurance[_serialNo].customer.banned,
-    //     //     "Transaction declined. Please continue talk with CS to check"
-    //     // );
-    //     _;
-    // }
-
-    /*
       First time insurance registration payment
     */
 
@@ -153,8 +140,6 @@ contract MangoCare {
         uint256 _serialNo,
         string memory _gadgetType
     ) public payable {
-        // ) public payable eligible(_custAddress, _serialNo) {
-
         require(
             !isSerialDuplicate(_serialNo),
             "This serial number is already asscociated with a policy"
